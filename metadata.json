@@ -1,0 +1,5 @@
+{
+  "name": "Webmen CMS",
+  "description": "Ein modernes, KI-gestütztes Content-Management-System, das für die Agentur Webmen entwickelt wurde. Es bietet eine intuitive Oberfläche zur Verwaltung von Seiten, Beiträgen und Medien, mit Unterstützung bei der Inhaltserstellung durch Gemini.",
+  "requestFramePermissions": []
+}
