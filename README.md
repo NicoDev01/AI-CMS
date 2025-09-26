@@ -1,4 +1,4 @@
-# Webmen CMS
+# AI-CMS
 
 This is a content management system built with React and TypeScript, featuring AI-powered content generation using the Gemini API.
 

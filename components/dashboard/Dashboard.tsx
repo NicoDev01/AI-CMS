@@ -7,13 +7,13 @@ interface StatCardProps {
 }
 
 const StatCard: React.FC<StatCardProps> = ({ label, value, icon }) => (
-  <div className="bg-webmen-background p-6 rounded-lg border border-webmen-border flex items-center space-x-4">
-    <div className="bg-webmen-accent p-3 rounded-full text-white">
+  <div className="bg-ai-cms-background p-6 rounded-lg border border-ai-cms-border flex items-center space-x-4">
+    <div className="bg-ai-cms-accent p-3 rounded-full text-white">
       {icon}
     </div>
     <div>
-      <p className="text-3xl font-bold text-webmen-text-primary">{value}</p>
-      <p className="text-webmen-text-secondary">{label}</p>
+      <p className="text-3xl font-bold text-ai-cms-text-primary">{value}</p>
+      <p className="text-ai-cms-text-secondary">{label}</p>
     </div>
   </div>
 );
@@ -27,18 +27,18 @@ interface DashboardProps {
 export default function Dashboard({ pagesCount, postsCount, mediaCount }: DashboardProps) {
   return (
     <div>
-      <h1 className="text-3xl font-bold text-webmen-text-primary mb-8">Dashboard</h1>
+      <h1 className="text-3xl font-bold text-ai-cms-text-primary mb-8">Dashboard</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <StatCard label="Seiten gesamt" value={pagesCount} icon={<PagesIcon />} />
         <StatCard label="Beiträge gesamt" value={postsCount} icon={<PostsIcon />} />
         <StatCard label="Medienobjekte" value={mediaCount} icon={<MediaIcon />} />
       </div>
-      <div className="mt-10 bg-webmen-sidebar/60 p-6 rounded-lg">
-        <h2 className="text-xl font-semibold text-webmen-text-primary mb-4">Willkommen beim Webmen CMS</h2>
-        <p className="text-webmen-text-secondary">
+      <div className="mt-10 bg-ai-cms-sidebar/60 p-6 rounded-lg">
+        <h2 className="text-xl font-semibold text-ai-cms-text-primary mb-4">Willkommen beim AI-CMS</h2>
+        <p className="text-ai-cms-text-secondary">
           Dies ist Ihre zentrale Anlaufstelle zur Verwaltung aller Inhalte Ihrer Website. Sie können neue Seiten erstellen, Blog-Beiträge verfassen und Ihre Medienbibliothek über die Seitenleiste verwalten.
         </p>
-        <p className="text-webmen-text-secondary mt-4">
+        <p className="text-ai-cms-text-secondary mt-4">
           Nutzen Sie die Kraft der KI, um Inhaltsentwürfe zu erstellen, indem Sie in den Seiten- und Beitragseditoren auf die Schaltfläche "Mit KI generieren" klicken.
         </p>
       </div>

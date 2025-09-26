@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from '../../types';
-import { WebmenLogo } from '../common/Logo';
+import { AiCmsLogo } from '../common/Logo';
 
 interface SidebarProps {
   currentView: View;
@@ -12,7 +12,7 @@ const NavLink: React.FC<{ icon: JSX.Element; label: string; isActive: boolean; o
   <button
     onClick={onClick}
     className={`flex items-center w-full px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200 ${
-      isActive ? 'bg-webmen-primary/10 text-webmen-primary' : 'text-webmen-text-secondary hover:bg-gray-200 hover:text-webmen-text-primary'
+      isActive ? 'bg-ai-cms-primary/10 text-ai-cms-primary' : 'text-ai-cms-text-secondary hover:bg-gray-200 hover:text-ai-cms-text-primary'
     }`}
   >
     {icon}
@@ -51,10 +51,10 @@ const navItems: { view: View; label: string; icon: JSX.Element }[] = [
 
 export default function Sidebar({ currentView, onNavigate, onSwitchToFrontend }: SidebarProps) {
   return (
-    <aside className="w-64 flex-shrink-0 bg-webmen-sidebar border-r border-webmen-border p-6 flex flex-col justify-between">
+    <aside className="w-64 flex-shrink-0 bg-ai-cms-sidebar border-r border-ai-cms-border p-6 flex flex-col justify-between">
       <div>
         <div className="mb-10 pl-2">
-          <WebmenLogo />
+          <AiCmsLogo />
         </div>
         <nav className="space-y-2">
           {navItems.map((item) => (
@@ -66,7 +66,7 @@ export default function Sidebar({ currentView, onNavigate, onSwitchToFrontend }:
               onClick={() => onNavigate(item.view)}
             />
           ))}
-            <div className="pt-4 mt-4 border-t border-webmen-border">
+            <div className="pt-4 mt-4 border-t border-ai-cms-border">
                 <NavLink
                   icon={<ViewIcon/>}
                   label="Seite ansehen"
@@ -76,8 +76,8 @@ export default function Sidebar({ currentView, onNavigate, onSwitchToFrontend }:
             </div>
         </nav>
       </div>
-      <div className="text-webmen-text-secondary text-xs text-center">
-        <p>© {new Date().getFullYear()} Webmen CMS</p>
+      <div className="text-ai-cms-text-secondary text-xs text-center">
+        <p>© {new Date().getFullYear()} AI-CMS</p>
         <p>Powered by AI</p>
       </div>
     </aside>

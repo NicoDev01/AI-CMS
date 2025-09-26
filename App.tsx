@@ -139,7 +139,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex h-screen bg-webmen-sidebar text-webmen-text-primary">
+    <div className="flex h-screen bg-ai-cms-sidebar text-ai-cms-text-primary">
       <Sidebar 
         currentView={view} 
         onNavigate={handleNavigate} 
@@ -149,7 +149,7 @@ export default function App() {
         }}
         />
       <main className="flex-1 flex flex-col overflow-hidden">
-        <div className="flex-1 p-6 md:p-10 overflow-y-auto bg-webmen-background">
+        <div className="flex-1 p-6 md:p-10 overflow-y-auto bg-ai-cms-background">
           {renderContent}
         </div>
       </main>

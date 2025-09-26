@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkHtml from 'remark-html';
 import { Page, Post } from '../../types';
-import { WebmenLogo } from '../common/Logo';
+import { AiCmsLogo } from '../common/Logo';
 
 interface FrontendViewProps {
   pages: Page[];
@@ -48,12 +48,12 @@ export default function FrontendView({ pages, posts, currentPath, onNavigate, on
               <div className="space-y-12">
                 {posts.map(post => (
                   <div key={post.id} className="pb-8 border-b border-gray-200">
-                    <h2 className="text-2xl font-bold mb-2 hover:text-webmen-primary transition-colors">
+                    <h2 className="text-2xl font-bold mb-2 hover:text-ai-cms-primary transition-colors">
                       <button onClick={() => onNavigate(`/blog/${post.slug}`)}>{post.title}</button>
                     </h2>
                     <p className="text-gray-500 mb-4">Veröffentlicht am: {new Date(post.createdAt).toLocaleDateString()}</p>
                     <p className="prose" style={{ fontSize: '1.1rem', marginBottom: '20px' }}>{stripMarkdown(post.content).substring(0, 200) + '...'}</p>
-                    <button onClick={() => onNavigate(`/blog/${post.slug}`)} className="text-webmen-accent font-semibold mt-4 inline-block hover:underline">Weiterlesen →</button>
+                    <button onClick={() => onNavigate(`/blog/${post.slug}`)} className="text-ai-cms-accent font-semibold mt-4 inline-block hover:underline">Weiterlesen →</button>
                   </div>
                 ))}
               </div>
@@ -68,11 +68,11 @@ export default function FrontendView({ pages, posts, currentPath, onNavigate, on
             </article>
             <aside className="lg:col-span-4">
                 <div className="sticky top-8 p-6 bg-gray-100 rounded-lg">
-                    <h3 className="font-bold text-lg mb-4 text-webmen-text-primary">Neueste Beiträge</h3>
+                    <h3 className="font-bold text-lg mb-4 text-ai-cms-text-primary">Neueste Beiträge</h3>
                     <ul>
                         {posts.slice(0, 3).map(post => (
                             <li key={post.id} className="mb-3">
-                                <button onClick={() => onNavigate(`/blog/${post.slug}`)} className="text-webmen-accent hover:underline text-left">{post.title}</button>
+                                <button onClick={() => onNavigate(`/blog/${post.slug}`)} className="text-ai-cms-accent hover:underline text-left">{post.title}</button>
                             </li>
                         ))}
                     </ul>
@@ -111,15 +111,15 @@ export default function FrontendView({ pages, posts, currentPath, onNavigate, on
   };
 
   return (
-    <div className="font-sans text-webmen-text-primary bg-white">
+    <div className="font-sans text-ai-cms-text-primary bg-white">
       <header className="p-4 border-b sticky top-0 bg-white/80 backdrop-blur-md z-10">
         <div className="container mx-auto flex justify-between items-center">
             <button onClick={() => onNavigate('/')} className="cursor-pointer">
-                <WebmenLogo />
+                <AiCmsLogo />
             </button>
             <nav className="flex items-center space-x-6">
             {pages.map(page => (
-                <button key={page.id} onClick={() => onNavigate(page.slug)} className={`font-medium text-lg ${currentPath === page.slug || (page.slug === '/blog' && currentPath.startsWith('/blog')) ? 'text-webmen-primary' : 'text-webmen-text-secondary hover:text-webmen-primary'}`}>
+                <button key={page.id} onClick={() => onNavigate(page.slug)} className={`font-medium text-lg ${currentPath === page.slug || (page.slug === '/blog' && currentPath.startsWith('/blog')) ? 'text-ai-cms-primary' : 'text-ai-cms-text-secondary hover:text-ai-cms-primary'}`}>
                 {page.title}
                 </button>
             ))}
@@ -132,12 +132,12 @@ export default function FrontendView({ pages, posts, currentPath, onNavigate, on
       </main>
 
       <footer className="mt-16 py-8 bg-gray-100 text-center text-sm text-gray-500 border-t">
-        <p>&copy; {new Date().getFullYear()} Webmen. Alle Rechte vorbehalten.</p>
+        <p>&copy; {new Date().getFullYear()} AI-CMS. Alle Rechte vorbehalten.</p>
       </footer>
       
       <button 
         onClick={onSwitchToCms}
-        className="fixed bottom-4 right-4 bg-webmen-primary text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:bg-webmen-accent transition-transform hover:scale-105"
+        className="fixed bottom-4 right-4 bg-ai-cms-primary text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:bg-ai-cms-accent transition-transform hover:scale-105"
         >
         Zurück zum CMS
       </button>
